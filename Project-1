@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ved's Cosmic Compatibility Protocol (VCCP) 🌌💙</title>
+    <style>
+        /* BASE STYLES - CLOUD DYNASTY THEME */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #070b14;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100vw;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 700px;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 40px rgba(180, 0, 255, 0.3);
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            position: relative;
+            z-index: 100;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #00eaff, #b400ff);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 900;
+        }
+        
+        h2.protocol-title {
+             text-align: center;
+             font-size: 1.1rem;
+             color: #00eaff;
+             margin-bottom: 30px;
+             text-shadow: 0 0 5px #00eaff44;
+        }
+
+
+        /* INPUT GROUP STYLES */
+        .input-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #b400ff;
+            font-size: 1.1rem;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #ffffff;
+            color: #000000;
+            font-size: 1rem;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 25px;
+            border: none;
+            background: linear-gradient(90deg, #00eaff, #9b00ff);
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px #00eaff99;
+        }
+
+        /* RESULT STYLES */
+        .result-section {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            display: none;
+            animation: fadeIn 0.8s ease-in-out;
+            border-left: 5px solid #b400ff;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h3 {
+            color: #00eaff;
+            border-bottom: 2px solid #b400ff;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .compatibility-result {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 255, 0.1);
+        }
+        
+        .core-numbers-display {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .core-numbers-display div {
+            padding: 10px;
+            background: rgba(180, 0, 255, 0.1);
+            border-radius: 5px;
+            width: 45%;
+        }
+        
+        .core-numbers-display strong {
+            display: block;
+            font-size: 1.5rem;
+            color: #00eaff;
+            text-shadow: 0 0 8px #00eaff;
+        }
+        
+        .prediction-tip {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #fff;
+            padding: 10px;
+            background: linear-gradient(45deg, #b400ff44, #00eaff44);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #00eaff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>VED'S COSMIC COMPATIBILITY PROTOCOL</h1>
+        <h2 class="protocol-title">Nexus Matrix 7.0 - Alphabetical Resonance Analysis 🌌</h2>
+
+        <div class="input-group">
+            <label for="name1">Your Full Name:</label>
+            <input type="text" id="name1" value="Ved Rathod" required>
+        </div>
+
+        <div class="input-group">
+            <label for="name2">Partner's Full Name:</label>
+            <input type="text" id="name2" value="Your Partner's Name" required>
+        </div>
+
+        <button onclick="runCompatibilityAnalysis()">Analyze Cosmic Match 💙🎊</button>
+
+        <div id="resultOutput" class="result-section">
+            </div>
+    </div>
+    
+    <div class="footer">
+        Powered by Ved's Nexus Matrix 7.0 Engine
+    </div>
+
+    <script>
+        // =================================================================
+        // 🌌 CORE NUMEROLOGY ENGINE (Adapted for Compatibility)
+        // =================================================================
+        class NumerologyEngine {
+            constructor() {
+                // Pythagorean Map (Alphabet-based calculation)
+                this.pythagoreanMap = { 'A': 1, 'J': 1, 'S': 1, 'B': 2, 'K': 2, 'T': 2, 'C': 3, 'L': 3, 'U': 3, 'D': 4, 'M': 4, 'V': 4, 'E': 5, 'N': 5, 'W': 5, 'F': 6, 'O': 6, 'X': 6, 'G': 7, 'P': 7, 'Y': 7, 'H': 8, 'Q': 8, 'Z': 8, 'I': 9, 'R': 9 };
+                this.vowels = ['A', 'E', 'I', 'O', 'U', 'Y'];
+                
+                // Compatibility Meanings (Based on the source data: "Similar complementary and contrasting dynamics for other pairings.")
+                this.compatibilityMatrix = {
+                    '1-1': { title: "The Twin Leaders (Ambitious Team)", primary: "High energy, ambition, and independence. Requires space and clear leadership roles to avoid clashes.", love: "Passionate but competitive.", tip: "Prioritize individual projects; support their goals without trying to dominate." },
+                    '1-2': { title: "The Leader & The Diplomat (Complementary Harmony)", primary: "A balanced partnership where 1 leads and 2 supports and harmonizes. Excellent teamwork and mutual respect.", love: "Deeply emotional and supportive.", tip: "Number 1 must value 2's feelings; 2 must encourage 1's initiative." },
+                    '1-3': { title: "The Creative Dynamo (Dynamic & Joyful)", primary: "Energetic and social pairing, full of ideas and expression. Life is rarely dull, but focus and stability can be a challenge.", love: "Fun, communicative, and expressive.", tip: "Channel your combined energy into shared creative projects or social events." },
+                    '1-4': { title: "The Architect & The Pioneer (Stability & Leadership)", primary: "A practical pairing that blends 1's vision with 4's structure. Strong foundation for long-term goals and material success.", love: "Reliable and committed.", tip: "Number 1 should respect 4's need for order; 4 must be flexible with 1's changes." },
+                    '1-5': { title: "The Energetic Explorers (Adaptable & Free)", primary: "Dynamic and adaptable pairing. Both crave action and freedom. Life is an adventure, but commitment might feel restrictive.", love: "Spontaneous and exciting.", tip: "Respect each other's need for personal space and change. Travel often." },
+                    '1-6': { title: "The Leader & The Nurturer (Supportive & Strong)", primary: "Strong leadership (1) combined with nurturing care (6). Focused on family, responsibility, and community. Highly supportive dynamic.", love: "Dedicated and protective.", tip: "Number 1 must share domestic responsibilities; 6 should allow 1 to take charge outside the home." },
+                    '1-7': { title: "The Director & The Analyst (Thoughtful Direction)", primary: "Analytical (7) and directional (1). They bring clarity and vision to their projects, but communication requires patience. Can be mentally stimulating.", love: "Intellectual and deep.", tip: "Engage in deep philosophical discussions. Respect 7's need for solitude and reflection." },
+                    '1-8': { title: "The Power Couple (Ambitious & Powerful)", primary: "Highly ambitious, materialistic, and efficient. Focused on career success and public achievement. Potential for high returns, but ego conflicts are common.", love: "Intense and driven.", tip: "Establish clear boundaries between personal and professional life. Share financial goals." },
+                    '1-9': { title: "The Visionary Humanitarians (Compassionate Leadership)", primary: "The pioneer (1) leads with a broad, compassionate vision (9). Focused on social good and idealism. A selfless and influential pairing.", love: "Idealistic and broad-minded.", tip: "Work together on causes you believe in. Avoid being overly critical of small flaws." },
+                    
+                    // General Pairing Descriptions (2-9 pairs are based on generalization of the source data)
+                    '2-2': { title: "The Harmonious Duet (Ultimate Balance)", primary: "Deep emotional connection, cooperation, and peace. Risk of indecisiveness or emotional intensity.", love: "Sensitive and mutually supportive.", tip: "Make decisions together but set time limits." },
+                    '2-3': { title: "The Social Communicators (Joyful Interaction)", primary: "Excellent communication and social grace. Life is fun, but can lack focus or practicality.", love: "Expressive and charming.", tip: "Use 2's diplomacy to manage 3's exuberance." },
+                    '3-3': { title: "The Creative Explosion (Self-Expression)", primary: "High creativity, joy, and expression. Life is a party, but stability and saving money can be difficult.", love: "Lively and artistic.", tip: "Encourage each other's talents but assign a practical person for finance." },
+                    '4-4': { title: "The Double Fortress (Stability & Order)", primary: "Ultimate stability, practicality, and dedication. Highly reliable and structured, but risk of stagnation or rigid thinking.", love: "Loyal and dependable.", tip: "Plan annual trips to break the routine and embrace change." },
+                    '4-8': { title: "The Material Builders (Power & Structure)", primary: "Highly effective in business and material creation. 4 lays the foundation; 8 builds the empire. Very powerful financially.", love: "Committed to success.", tip: "Remember to enjoy the fruits of your labor and prioritize emotional connection." },
+                    '5-5': { title: "The Freedom Seekers (Dynamic Change)", primary: "High energy, versatility, and passion for change. Freedom is paramount. Can be volatile but always exciting.", love: "Spontaneous and adventurous.", tip: "Avoid financial risks and ensure a base level of stability." },
+                    '6-6': { title: "The Double Nurturers (Family & Responsibility)", primary: "Focused entirely on home, family, and community responsibility. Highly loving and caring, but can be overly self-sacrificing.", love: "Unconditional and domestic.", tip: "Set time aside for personal self-care and individual growth." },
+                    '7-7': { title: "The Mystical Thinkers (Spiritual Depth)", primary: "Deeply intellectual, spiritual, and introspective. Share a love for knowledge and solitude. Can become too isolated.", love: "Intellectual and non-materialistic.", tip: "Make a conscious effort to stay connected to the physical world and social circle." },
+                    '8-8': { title: "The Double Empire (Ultimate Ambition)", primary: "Extremely ambitious, powerful, and materially successful. A financial powerhouse, but requires balancing power dynamics and managing stress.", love: "Driving and intense.", tip: "Delegate non-essential tasks and schedule relaxation time together." },
+                    '9-9': { title: "The Universal Connectors (Global Compassion)", primary: "High idealism, compassion, and humanitarianism. Focused on service to the world. A truly selfless and broad-minded pairing.", love: "Idealistic and philanthropic.", tip: "Focus on your immediate relationship, not just global issues, to prevent emotional distance." },
+                    // Remaining pairs use the number order (e.g., 2-4 is the same as 4-2)
+                    '2-3': { title: "The Social Communicators (Joyful Interaction)", primary: "Excellent communication and social grace. Life is fun, but can lack focus or practicality.", love: "Expressive and charming.", tip: "Use 2's diplomacy to manage 3's exuberance." },
+                    '2-4': { title: "The Stabilizing Team (Diplomacy & Order)", primary: "2's balance and 4's stability create a secure and practical home base. Slow, steady progress is favored.", love: "Reliable and enduring.", tip: "Introduce variety and fun to avoid boredom." },
+                    '2-5': { title: "The Flexible Team (Change & Balance)", primary: "A dynamic duo where 2 brings sensitivity and 5 brings excitement. Mutual adaptability is key to making this work.", love: "Varied and engaging.", tip: "5 must commit to 2, and 2 must allow 5 freedom." },
+                    '2-6': { title: "The Ultimate Family (Nurturing & Peace)", primary: "The most harmonious pairing, focused on home, family, and community. Deep emotional support and unconditional love.", love: "Caring and deeply committed.", tip: "Ensure you don't become overly dependent on each other." },
+                    '2-7': { title: "The Intuitive Analysts (Peace & Wisdom)", primary: "Highly intuitive and intellectual. Deep spiritual and mental connection. Avoid large social gatherings; thrive in quiet space.", love: "Thoughtful and soulful.", tip: "Respect 7's need for solitude. Communicate feelings clearly to avoid assumptions." },
+                    '2-8': { title: "The Power Behind the Throne (Support & Success)", primary: "8 drives ambition while 2 provides the diplomatic foundation. A strong team for material success if 2 feels equally valued.", love: "Supportive and driven.", tip: "Ensure 8 gives credit and emotional attention to 2." },
+                    '2-9': { title: "The Compassionate Helpers (Global Sensitivity)", primary: "Both are sensitive and humanitarian. Focused on serving others. Requires practical stability to avoid being overwhelmed by emotions.", love: "Kind and empathetic.", tip: "Maintain financial boundaries and protect your energy." },
+                    '3-4': { title: "The Creative Builders (Structure for Fun)", primary: "3 provides the fun and creativity; 4 provides the necessary structure and limits. A successful blend of work and play.", love: "Constructive and cheerful.", tip: "3 must respect 4's boundaries; 4 must loosen up sometimes." },
+                    '3-5': { title: "The Social Butterflies (Freedom & Expression)", primary: "Extremely social, expressive, and fun. Life is an exciting whirlwind of events and people. Can lack depth or lasting commitment.", love: "Adventurous and flirty.", tip: "Schedule time for deep, intimate connection away from the crowd." },
+                    '3-6': { title: "The Nurturing Artists (Family & Joy)", primary: "A loving and happy domestic life. 3 brings creativity to the home; 6 nurtures the family. Focus is on joyful responsibility.", love: "Warm and expressive.", tip: "Avoid financial overspending on leisure; 6 should manage the budget." },
+                    '3-7': { title: "The Intellectual Spark (Wisdom & Wit)", primary: "Highly stimulating intellectual connection. 3 communicates; 7 analyzes. Excellent for creative problem-solving.", love: "Mentally engaging.", tip: "3 should respect 7's need for space; 7 should participate in 3's social life." },
+                    '3-8': { title: "The Successful Showmen (Power & Charisma)", primary: "Ambitious and charismatic pairing. 3 attracts attention; 8 commands power. Excellent for public success and business ventures.", love: "Passionate and focused on status.", tip: "Balance the need for status with genuine emotional connection." },
+                    '3-9': { title: "The Idealistic Artists (Broad Expression)", primary: "A highly creative and compassionate pairing. Focused on inspiring others and social justice through art or communication.", love: "Deeply sensitive and expressive.", tip: "Focus your energy locally to avoid burnout from global issues." },
+                    '4-5': { title: "The Practical Adventurers (Controlled Change)", primary: "4 seeks security; 5 seeks freedom. This creates tension, but also balance. 4 provides the base; 5 brings the excitement.", love: "Challenging but growth-oriented.", tip: "Negotiate freedom and structure. Set clear expectations." },
+                    '4-6': { title: "The Stable Home (Duty & Order)", primary: "One of the most stable and duty-focused pairings. Excellent for building a home, raising children, and long-term security.", love: "Loyal and devoted.", tip: "Must make time for fun and spontaneity, or life becomes dull." },
+                    '4-7': { title: "The Scientific Method (Structure & Wisdom)", primary: "7 seeks knowledge; 4 provides the method to organize that knowledge. A mentally stimulating and reliable partnership.", love: "Intellectually deep.", tip: "4 must allow 7 emotional privacy; 7 must share findings with 4." },
+                    '4-9': { title: "The Structured Humanitarians (Orderly Service)", primary: "4 provides the practical structure necessary for 9's broad humanitarian goals. They turn ideals into action.", love: "Purpose-driven and reliable.", tip: "4 must accept 9's idealism; 9 must accept 4's details." },
+                    '5-6': { title: "The Wild & The Homebody (Dynamic Tension)", primary: "5 craves change; 6 craves stability and home. Requires constant negotiation, but can teach each other valuable lessons.", love: "Unpredictable but devoted.", tip: "6 must trust 5's freedom; 5 must always return home." },
+                    '5-7': { title: "The Intellectual Nomads (Freedom & Truth)", primary: "Both are non-traditionalists who value intellectual and physical freedom. They learn and explore together.", love: "Mentally electric.", tip: "Avoid financial instability. Prioritize shared intellectual growth." },
+                    '5-8': { title: "The High-Powered Risk Takers (Action & Ambition)", primary: "A driven, high-stakes partnership. 5 takes the risk; 8 manages the success. Can be highly lucrative but also stressful.", love: "Passionate and volatile.", tip: "Share responsibilities and maintain financial transparency." },
+                    '5-9': { title: "The Global Adventurers (Change for Good)", primary: "5 brings the energy of change; 9 brings the global vision. Focused on broad experiences and humanitarian travel.", love: "Broad-minded and engaging.", tip: "Maintain a local base of stability amidst global travel." },
+                    '6-7': { title: "The Spiritual Home (Nurturing Wisdom)", primary: "6 provides the emotional support for 7's intellectual and spiritual quest. A safe, nurturing space for deep reflection.", love: "Soulful and protective.", tip: "7 must verbally appreciate 6's efforts; 6 must respect 7's quiet time." },
+                    '6-8': { title: "The Successful Providers (Family & Finance)", primary: "8 provides the wealth; 6 creates the loving home. A classic, highly functional relationship focused on security and family status.", love: "Committed and materialistic.", tip: "Balance business travel with quality family time." },
+                    '6-9': { title: "The Harmonious Service (Universal Love)", primary: "A selfless and loving pairing, focused on family and community service. Deep compassion and mutual understanding.", love: "Unconditional and kind.", tip: "Remember that your own needs are important too." },
+                    '7-8': { title: "The Strategic Thinkers (Vision & Wealth)", primary: "7 provides the strategy and insight; 8 manifests the success and wealth. An intellectual partnership that achieves great goals.", love: "Respectful and results-driven.", tip: "7 must accept 8's materialism; 8 must accept 7's introversion." },
+                    '7-9': { title: "The Global Philosophers (Wisdom & Idealism)", primary: "Focused on deep philosophical thought and humanitarian ideals. High spiritual and intellectual compatibility.", love: "Deep and non-conventional.", tip: "Ground your shared thoughts in actionable reality occasionally." },
+                    '8-9': { title: "The Powerful Idealists (Success with Purpose)", primary: "8 provides the power and resource; 9 provides the vision for social good. Focused on building a lasting, impactful legacy.", love: "Driven by purpose.", tip: "8 must let go of some control; 9 must stay organized." }
+                };
+            }
+
+            reduceNumber(num) {
+                let reduced = num;
+                // Master numbers are not typically used in compatibility reduction, always reduce to 1-9
+                while (reduced > 9) {
+                    let sum = 0;
+                    String(reduced).split('').forEach(digit => { sum += parseInt(digit); });
+                    reduced = sum;
+                }
+                return reduced; // Always returns 1-9
+            }
+
+            nameToNumber(name, map) {
+                const normalizedName = name.toUpperCase().replace(/[^A-Z]/g, '');
+                let sum = 0;
+                for (const char of normalizedName) {
+                    sum += map[char] || 0;
+                }
+                return sum;
+            }
+
+            calculateExpression(fullName) {
+                const total = this.nameToNumber(fullName, this.pythagoreanMap);
+                return this.reduceNumber(total);
+            }
+
+            calculateSoulUrge(fullName) {
+                const normalizedName = fullName.toUpperCase().replace(/[^A-Z]/g, '');
+                let vowelSum = 0;
+                for (const char of normalizedName) {
+                    if (this.vowels.includes(char)) { vowelSum += this.pythagoreanMap[char] || 0; }
+                }
+                return this.reduceNumber(vowelSum);
+            }
+            
+            getCompatibility(num1, num2) {
+                // Ensures consistency (e.g., 1-4 is same as 4-1)
+                const key = num1 < num2 ? `${num1}-${num2}` : `${num2}-${num1}`;
+                return this.compatibilityMatrix[key] || { 
+                    title: "Unique Resonance Detected", 
+                    primary: "Your unique pattern requires manual interpretation. Your vibrations are powerful but non-conventional.",
+                    love: "A love that defies categorization.", 
+                    tip: "Focus on open communication and deep mutual respect."
+                };
+            }
+        }
+
+        // =================================================================
+        // 🚀 MAIN EXECUTION FUNCTION
+        // =================================================================
+
+        function runCompatibilityAnalysis() {
+            const name1 = document.getElementById('name1').value.trim();
+            const name2 = document.getElementById('name2').value.trim();
+            const resultOutput = document.getElementById('resultOutput');
+            resultOutput.style.display = 'none';
+
+            if (!name1 || !name2) {
+                resultOutput.innerHTML = `<div style="color: #ff00ff;">⚠️ Please enter both names for the Cosmic Protocol.</div>`;
+                resultOutput.style.display = 'block';
+                return;
+            }
+
+            try {
+                const engine = new NumerologyEngine();
+
+                // 1. Calculate Core Numbers (Alphabet-based)
+                const n1Expression = engine.calculateExpression(name1);
+                const n2Expression = engine.calculateExpression(name2);
+                const n1SoulUrge = engine.calculateSoulUrge(name1);
+                const n2SoulUrge = engine.calculateSoulUrge(name2);
+
+                // 2. Determine Compatibility Types
+                const destinyMatch = engine.getCompatibility(n1Expression, n2Expression);
+                const emotionalMatch = engine.getCompatibility(n1SoulUrge, n2SoulUrge);
+
+                // 3. Render Output in Cloud Dynasty Style
+                const htmlOutput = `
+                    <h3>🔥 ALPHA VIBRATION SUMMARY</h3>
+                    <div class="core-numbers-display">
+                        <div>
+                            ${name1}'s Expression: <strong>${n1Expression}</strong><br>Soul Urge: <strong>${n1SoulUrge}</strong>
+                        </div>
+                        <div>
+                            ${name2}'s Expression: <strong>${n2Expression}</strong><br>Soul Urge: <strong>${n2SoulUrge}</strong>
+                        </div>
+                    </div>
+
+                    <h3>🌌 DESTINY MATCH (Expression: ${n1Expression} & ${n2Expression})</h3>
+                    <div class="compatibility-result">
+                        <p><strong>Pattern Name:</strong> ${destinyMatch.title}</p>
+                        <p><strong>Primary Dynamic:</strong> ${destinyMatch.primary}</p>
+                        <p><em>Interpretation:</em> यह मैच बताता है कि जब आप दोनों एक साथ काम करते हैं, अपने करियर में या जीवन के सार्वजनिक लक्ष्यों में, तो आप कैसे व्यवहार करते हैं।</p>
+                    </div>
+
+                    <h3>💙 EMOTIONAL CORE MATCH (Soul Urge: ${n1SoulUrge} & ${n2SoulUrge})</h3>
+                    <div class="compatibility-result">
+                        <p><strong>Pattern Name:</strong> ${emotionalMatch.title}</p>
+                        <p><strong>Inner Connection:</strong> ${emotionalMatch.love}</p>
+                        <p><em>Interpretation:</em> यह मैच आपके दिल की सबसे गहरी इच्छाओं और भावनात्मक जरूरतों के स्तर पर आपकी केमिस्ट्री को डिकोड करता है।</p>
+                    </div>
+
+                    <h3>🌠 CLOUD DYNASTY ACTION TIP</h3>
+                    <div class="prediction-tip">
+                        <p><strong>Your Destiny Protocol:</strong> ${destinyMatch.tip}</p>
+                        <p><strong>Your Emotional Focus:</strong> ${emotionalMatch.tip}</p>
+                        <p style="margin-top: 10px;">**Final Verdict:** आपकी जोड़ी **${destinyMatch.title}** की बाहरी ऊर्जा और **${emotionalMatch.title}** की आंतरिक गहराई को मिलाती है। यह संयोजन एक शक्तिशाली, उद्देश्य-केंद्रित संबंध बनाता है!</p>
+                    </div>
+                `;
+
+                resultOutput.innerHTML = htmlOutput;
+                resultOutput.style.display = 'block';
+
+            } catch (error) {
+                resultOutput.innerHTML = `<div style="color: #ff00ff;">❌ Cosmic Analysis Failed: ${error.message}</div>`;
+                resultOutput.style.display = 'block';
+                console.error(error);
+            }
+        }
+    </script>
+</body>
+</html>
